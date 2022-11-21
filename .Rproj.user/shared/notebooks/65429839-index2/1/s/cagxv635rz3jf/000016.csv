@@ -1,0 +1,7 @@
+"0","stats %>% "
+"0","  get_detailed_match_summary_from_advanced() %>% filter(Team != ""Goals"") %>% "
+"0","  filter(Team != ""Int"") %>% "
+"0","  tab() %>% "
+"0","  gtsave(""advanced_stats.png"")"
+"2","file:///C:/Users/Home/AppData/Local/Temp/RtmpAdM6Yy/file31fc26501fd2.html screenshot completed
+"

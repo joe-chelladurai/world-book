@@ -1,0 +1,5 @@
+"0","get_scores_from_match_report(match_report) %>% "
+"0"," tab() %>% "
+"0","  gtsave(""score.png"")"
+"2","file:///C:/Users/Home/AppData/Local/Temp/RtmpAdM6Yy/file31fc6ca428ac.html screenshot completed
+"
