@@ -4,6 +4,10 @@ editor: visual
 ---
 
 ```{r}
+source("initiate.R")
+```
+
+```{r}
 url <- "https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup"
 ```
 

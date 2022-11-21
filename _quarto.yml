@@ -7,8 +7,22 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - content.qmd
+  sidebar: 
+    - id: content
+      title: "Content"
+      contents:
+        - href: content.qmd
+        - href: group-a.qmd
+        - href: group-b.qmd
+        - href: group-c.qmd
+        - href: group-d.qmd
+        - href: group-e.qmd
+        - href: group-f.qmd
+        - href: group-g.qmd
+        - href: group-h.qmd
 
+  
 format:
   html:
     theme: cosmo

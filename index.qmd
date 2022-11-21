@@ -137,8 +137,4 @@ t <- "qatar-vs-ecuador"
 str_to_title(str_replace_all(match_ids$match[i], "-", " "))
 ```
 
-```{r}
-worldcup::
-```
-
 

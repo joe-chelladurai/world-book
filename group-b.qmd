@@ -1,0 +1,44 @@
+---
+title: "Group B"
+execute:
+  echo: false
+---
+
+
+```{r}
+source("initiate.R")
+```
+
+
+
+
+
+```{r}
+match_ids <- all_matches %>% filter(group_name == "Grp. B")
+```
+
+```{r results="asis"}
+for(i in seq(nrow(match_ids))) {
+  print(paste(match_ids$id[i], match_ids$match[i]))
+  folder<-dir.create(paste0(match_ids$match[i]))
+  table <- get_score(match_ids$id[i])
+  
+  filename <- paste0(match_ids$match[i], "/",match_ids$match[i], "score.png")
+  
+  gtsave(gt(table), 
+         paste0(match_ids$match[i], "/",match_ids$match[i], "score.png"))
+  
+  gt(table) %>% gt::as_raw_html()
+  
+  title <- str_to_title(str_replace_all(match_ids$match[i], "-", " "))
+  
+  title <- str_replace(title, "Vs", "vs")
+  cat(" \n###", title,"\n")
+
+   cat(paste0("![](", filename,")"))
+
+  cat("  \n")
+  
+
+}
+```
