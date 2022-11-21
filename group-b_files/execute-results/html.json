@@ -1,0 +1,14 @@
+{
+  "hash": "7e1b123f06495024f8bab67726a397cf",
+  "result": {
+    "markdown": "---\ntitle: \"Group B\"\nexecute:\n  echo: false\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n[1] \"3854559 england-vs-iran\"\n\n```\nWarning in dir.create(paste0(match_ids$match[i])): 'england-vs-iran' already\nexists\n```\n\n \n### England vs Iran \n![](england-vs-iran/england-vs-iranscore.png)  \n[1] \"3854560 usa-vs-wales\"\n\n```\nWarning in dir.create(paste0(match_ids$match[i])): 'usa-vs-wales' already exists\n```\n\n \n### Usa vs Wales \n![](usa-vs-wales/usa-vs-walesscore.png)  \n[1] \"3854562 wales-vs-iran\"\n\n```\nWarning in dir.create(paste0(match_ids$match[i])): 'wales-vs-iran' already\nexists\n```\n\n \n### Wales vs Iran \n![](wales-vs-iran/wales-vs-iranscore.png)  \n[1] \"3854561 england-vs-usa\"\n\n```\nWarning in dir.create(paste0(match_ids$match[i])): 'england-vs-usa' already\nexists\n```\n\n \n### England vs Usa \n![](england-vs-usa/england-vs-usascore.png)  \n[1] \"3854564 iran-vs-usa\"\n\n```\nWarning in dir.create(paste0(match_ids$match[i])): 'iran-vs-usa' already exists\n```\n\n \n### Iran vs Usa \n![](iran-vs-usa/iran-vs-usascore.png)  \n[1] \"3854563 wales-vs-england\"\n\n```\nWarning in dir.create(paste0(match_ids$match[i])): 'wales-vs-england' already\nexists\n```\n\n \n### Wales vs England \n![](wales-vs-england/wales-vs-englandscore.png)  ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

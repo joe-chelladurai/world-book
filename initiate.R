@@ -39,3 +39,27 @@ groups <- league_table %>%
 
 all_matches <- matches  %>% 
   left_join(groups, by = "home")
+
+
+
+
+match_result <- fotmob_get_league_matches(league_id = 77)
+
+
+home <- match_result %>% 
+  filter(id == match_id) %>% 
+  pull(home) %>% 
+  rename(home = name) %>% 
+  select(home)
+
+away <- match_result %>% 
+  filter(id == match_id) %>% 
+  pull(away) %>% 
+  rename(away = name) %>% 
+  select(away)
+
+status <- match_result %>% 
+  filter(id == match_id) %>% 
+  pull(status)
+
+cbind(match_result, home, away, status)

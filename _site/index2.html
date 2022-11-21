@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>world-book - Untitled</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">world-book</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./content.html" aria-current="page">
+ <span class="menu-text">content.html</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Untitled</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./content.html" class="sidebar-item-text sidebar-link">content.html</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-a.html" class="sidebar-item-text sidebar-link">Group A</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-b.html" class="sidebar-item-text sidebar-link">Group B</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-c.html" class="sidebar-item-text sidebar-link">group-c.html</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-d.html" class="sidebar-item-text sidebar-link">group-d.html</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-e.html" class="sidebar-item-text sidebar-link">group-e.html</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-f.html" class="sidebar-item-text sidebar-link">group-f.html</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-g.html" class="sidebar-item-text sidebar-link">group-g.html</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group-h.html" class="sidebar-item-text sidebar-link">group-h.html</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Untitled</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"initiate.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>match_summary <span class="ot">&lt;-</span> <span class="fu">fb_match_summary</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>match_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           League Match_Date                    Matchweek Home_Team
+1  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+2  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+3  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+4  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+5  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+6  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+7  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+8  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+9  FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+10 FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+11 FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+12 FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+13 FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+14 FIFA World Cup 2022-11-20 FIFA World Cup (Group stage)     Qatar
+   Home_Formation Home_Score Home_xG Home_Goals Home_Yellow_Cards
+1           5-3-2          0     0.3                            4
+2           5-3-2          0     0.3                            4
+3           5-3-2          0     0.3                            4
+4           5-3-2          0     0.3                            4
+5           5-3-2          0     0.3                            4
+6           5-3-2          0     0.3                            4
+7           5-3-2          0     0.3                            4
+8           5-3-2          0     0.3                            4
+9           5-3-2          0     0.3                            4
+10          5-3-2          0     0.3                            4
+11          5-3-2          0     0.3                            4
+12          5-3-2          0     0.3                            4
+13          5-3-2          0     0.3                            4
+14          5-3-2          0     0.3                            4
+   Home_Red_Cards Away_Team Away_Formation Away_Score Away_xG
+1               0   Ecuador          4-4-2          2     1.2
+2               0   Ecuador          4-4-2          2     1.2
+3               0   Ecuador          4-4-2          2     1.2
+4               0   Ecuador          4-4-2          2     1.2
+5               0   Ecuador          4-4-2          2     1.2
+6               0   Ecuador          4-4-2          2     1.2
+7               0   Ecuador          4-4-2          2     1.2
+8               0   Ecuador          4-4-2          2     1.2
+9               0   Ecuador          4-4-2          2     1.2
+10              0   Ecuador          4-4-2          2     1.2
+11              0   Ecuador          4-4-2          2     1.2
+12              0   Ecuador          4-4-2          2     1.2
+13              0   Ecuador          4-4-2          2     1.2
+14              0   Ecuador          4-4-2          2     1.2
+                                                    Away_Goals
+1  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+2  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+3  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+4  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+5  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+6  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+7  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+8  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+9  Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+10 Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+11 Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+12 Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+13 Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+14 Enner Valencia (P) · 16&amp;rsquor; Enner Valencia · 31&amp;rsquor;
+   Away_Yellow_Cards Away_Red_Cards
+1                  2              0
+2                  2              0
+3                  2              0
+4                  2              0
+5                  2              0
+6                  2              0
+7                  2              0
+8                  2              0
+9                  2              0
+10                 2              0
+11                 2              0
+12                 2              0
+13                 2              0
+14                 2              0
+                                                                         Game_URL
+1  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+2  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+3  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+4  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+5  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+6  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+7  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+8  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+9  https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+10 https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+11 https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+12 https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+13 https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+14 https://fbref.com/en/matches/1b2886ce/Qatar-Ecuador-November-20-2022-World-Cup
+      Team Home_Away Event_Time Is_Pens Event_Half  Event_Type
+1    Qatar      Home         15   FALSE          1 Yellow Card
+2  Ecuador      Away         16   FALSE          1     Penalty
+3    Qatar      Home         22   FALSE          1 Yellow Card
+4  Ecuador      Away         29   FALSE          1 Yellow Card
+5  Ecuador      Away         31   FALSE          1        Goal
+6    Qatar      Home         36   FALSE          1 Yellow Card
+7  Ecuador      Away         56   FALSE          2 Yellow Card
+8  Ecuador      Away         68   FALSE          2  Substitute
+9    Qatar      Home         71   FALSE          2  Substitute
+10   Qatar      Home         72   FALSE          2  Substitute
+11 Ecuador      Away         77   FALSE          2  Substitute
+12   Qatar      Home         78   FALSE          2 Yellow Card
+13 Ecuador      Away         90   FALSE          2  Substitute
+14 Ecuador      Away         90   FALSE          2  Substitute
+                            Event_Players Score_Progression Penalty_Number
+1                           Saad Al Sheeb               0:0             NA
+2             Enner Valencia Penalty Kick               0:1             NA
+3                              Almoez Ali               0:1             NA
+4                          Moisés Caicedo               0:1             NA
+5  Enner Valencia Assist: Ángelo Preciado               0:2             NA
+6                           Karim Boudiaf               0:2             NA
+7                          Jhegson Méndez               0:2             NA
+8     Jeremy Sarmiento for Romario Ibarra               0:2             NA
+9      Mohammed Waad for Hassan Al-Haydos               0:2             NA
+10        Mohammed Muntari for Almoez Ali               0:2             NA
+11      José Cifuentes for Enner Valencia               0:2             NA
+12                             Akram Afif               0:2             NA
+13        Kevin Jauch for Michael Estrada               0:2             NA
+14         Alan Franco for Moisés Caicedo               0:2             NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>match_report <span class="ot">&lt;-</span> <span class="fu">fb_match_report</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_scores_from_match_report</span>(match_report) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">tab</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="st">"score.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_timeline_from_match_summary</span>(match_summary) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(team) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="st">"timeline.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">fb_advanced_match_stats</span>(url, <span class="at">stat_type =</span> <span class="st">"summary"</span>,<span class="at">team_or_player =</span> <span class="st">"team"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stats <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_detailed_match_summary_from_advanced</span>() <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Team <span class="sc">!=</span> <span class="st">"Goals"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Team <span class="sc">!=</span> <span class="st">"Int"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="st">"advanced_stats.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
